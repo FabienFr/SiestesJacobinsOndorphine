@@ -20,11 +20,116 @@ interface PannellumConfig {
 interface HotspotArgs {
   src: string;
   message: string;
+  dialogImage?: string;
+  url?: string;
+  size?: number;
 }
 
 interface Pannellum {
   viewer: (container: HTMLDivElement, config: PannellumConfig) => void;
 }
+
+function hotspotWithImage(hotSpotDiv: HTMLDivElement, args: HotspotArgs) {
+  const el = document.createElement("img");
+  el.src = args.src; // Our custom hotspot image
+  const size = args.size || 50;
+  el.style.width = `${size}px !important`;
+  el.style.height = `${size}px !important`;
+  el.classList.add("my-pulse");
+  el.style.cursor = "pointer";
+  hotSpotDiv.appendChild(el);
+
+  const dialog = document.createElement("div");
+  dialog.className = "custom-dialog";
+  dialog.style.display = "none";
+
+  const closeBtn = document.createElement("button");
+  closeBtn.innerHTML = "×";
+  closeBtn.className = "dialog-close";
+  dialog.appendChild(closeBtn)
+
+  const image = document.createElement("img");
+  image.src = args.dialogImage || "";
+  image.style.maxWidth = "720px";
+  image.style.marginBottom = "10px";
+
+  const content = document.createElement("div");
+  
+  if (args.url) {
+    const link = document.createElement("a");
+    link.href = args.url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = args.message;
+    link.style.color = "#4dabf7";
+    link.style.textDecoration = "underline";
+    content.appendChild(link);
+  } else {
+    const text = document.createElement("p");
+    text.textContent = args.message;
+    content.appendChild(text);
+  }
+
+  dialog.appendChild(image);
+  dialog.appendChild(content);
+  document.body.appendChild(dialog);
+
+  closeBtn.onclick = () => {
+    dialog.style.display = "none";
+  };
+
+  document.addEventListener("click", (event) => {
+    if (!dialog.contains(event.target as Node) && 
+        !el.contains(event.target as Node) && 
+        dialog.style.display === "block") {
+      dialog.style.display = "none";
+    }
+  });
+
+  el.onclick = (event) => {
+    event.stopPropagation();
+    dialog.style.display = dialog.style.display === "none" ? "block" : "none";
+  };
+}
+
+const HOTSPOTS: PannellumHotspot[] = [
+  {
+    pitch: 16,
+    yaw: 0,
+    createTooltipFunc: hotspotWithImage,
+    createTooltipArgs: {
+      src: "/images/siestes.png",
+      message: "Ondorphine",
+      dialogImage: "/images/scene.jpg",
+      url: "https://ondorphine.club1.fr/",
+      size: 50
+    },
+  },
+  {
+    pitch: 4,
+    yaw: 30,
+    createTooltipFunc: hotspotWithImage,
+    createTooltipArgs: {
+      src: "/images/siestes.png",
+      message: "Ondorphine",
+      dialogImage: "/images/chants.jpg",
+      url: "https://ondorphine.club1.fr/",
+      size: 40
+    },
+  },
+  {
+    pitch: 175,
+    yaw: -10,
+    createTooltipFunc: hotspotWithImage,
+    createTooltipArgs: {
+      src: "/images/siestes.png",
+      message: "Ondorphine",
+      dialogImage: "/images/nef.jpg",
+      url: "https://ondorphine.club1.fr/",
+      size: 20
+    },
+  },
+];
 
 export default function HomePage() {
   const panoRef = useRef<HTMLDivElement | null>(null);
@@ -37,40 +142,12 @@ export default function HomePage() {
       return;
     }
 
-    function hotspotWithImage(hotSpotDiv: HTMLDivElement, args: HotspotArgs) {
-      const el = document.createElement("img");
-      el.src = args.src; // Our custom hotspot image
-      el.style.width = "50px";
-      el.style.height = "50px";
-      el.classList.add("my-pulse");
-      // Optional: add a pointer cursor or custom styling
-      el.style.cursor = "pointer";
-      // We append the <img> to the hotspot container
-      hotSpotDiv.appendChild(el);
-
-      // If you want a click action, you can do:
-      el.onclick = () => {
-        alert("Hotspot image clicked!");
-      };
-    }
-
     pannellum.viewer(panoRef.current, {
       type: "equirectangular",
       panorama: "/images/jacobins.jpg",
       autoLoad: true,
       compass: true,
-      hotSpots: [
-        {
-          pitch: 16,
-          yaw: 0,
-          // We don't use 'type': 'info' or 'scene'; instead, define our own custom tooltip
-          createTooltipFunc: hotspotWithImage,
-          createTooltipArgs: {
-            src: "/images/siestes.png",
-            message: 'Hello from a custom tooltip!'// The image you want to display
-          },
-        },
-      ],
+      hotSpots: HOTSPOTS,
     });
   }, []);
 
