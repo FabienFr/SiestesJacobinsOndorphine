@@ -50,7 +50,7 @@ function hotspotWithImage(hotSpotDiv: HTMLDivElement, args: HotspotArgs) {
 
   const image = document.createElement("img");
   image.src = args.dialogImage || "";
-  image.style.maxWidth = "90vw"; // 90% of viewport width
+  image.style.maxWidth = "60vw"; // 90% of viewport width
   image.style.width = "auto";
   image.style.height = "auto";
   image.style.marginBottom = "10px";
