@@ -34,8 +34,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
       </head>
       <body style={{ height: "100%", margin: 0 }}>
-        <Analytics />
         {children}
+        <Analytics />
       </body>
     </html>
   );
