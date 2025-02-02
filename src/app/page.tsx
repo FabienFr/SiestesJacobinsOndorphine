@@ -2,18 +2,41 @@
 import { useRef, useEffect } from "react";
 import Image from "next/image";
 
+interface PannellumHotspot {
+  pitch: number;
+  yaw: number;
+  createTooltipFunc: (hotSpotDiv: HTMLDivElement, args: HotspotArgs) => void;
+  createTooltipArgs: HotspotArgs;
+}
+
+interface PannellumConfig {
+  type: string;
+  panorama: string;
+  autoLoad: boolean;
+  compass: boolean;
+  hotSpots: PannellumHotspot[];
+}
+
+interface HotspotArgs {
+  src: string;
+}
+
+interface Pannellum {
+  viewer: (container: HTMLDivElement, config: PannellumConfig) => void;
+}
+
 export default function HomePage() {
   const panoRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (!panoRef.current) return;
-    const pannellum = (window as any).pannellum;
+    const pannellum = (window as unknown as { pannellum: Pannellum }).pannellum;
     if (!pannellum) {
       console.error("Pannellum script not loaded");
       return;
     }
 
-    function hotspotWithImage(hotSpotDiv: HTMLDivElement, args: any) {
+    function hotspotWithImage(hotSpotDiv: HTMLDivElement, args: HotspotArgs) {
       const el = document.createElement("img");
       el.src = args.src; // Our custom hotspot image
       el.style.width = "50px";
