@@ -1,7 +1,7 @@
 import './globals.css';
 
 export const metadata = {
-  title: "Pannellum Demo",
+  title: "Siestes aux Jacobins - Ondorphine",
 };
 
 import { ReactNode } from 'react';
