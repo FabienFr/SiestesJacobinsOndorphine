@@ -37,7 +37,7 @@ html, body {
   width: 32px !important;
   height: 32px !important;
   transform-origin: center center;
-  animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite !important;
+  animation: ping 2.5s cubic-bezier(0, 0, 0.2, 1) infinite !important;
 }
 
 .custom-dialog {
