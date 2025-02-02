@@ -4,7 +4,9 @@ export const metadata = {
   title: "Pannellum Demo",
 };
 
-export default function RootLayout({ children }) {
+import { ReactNode } from 'react';
+
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" style={{ height: "100%" }}>
       <head>
