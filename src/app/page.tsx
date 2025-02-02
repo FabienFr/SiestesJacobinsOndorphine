@@ -43,15 +43,15 @@ function hotspotWithImage(hotSpotDiv: HTMLDivElement, args: HotspotArgs) {
   dialog.className = "custom-dialog";
   dialog.style.display = "none";
 
-  const closeBtn = document.createElement("button");
-  closeBtn.innerHTML = "×";
-  closeBtn.className = "dialog-close";
-  dialog.appendChild(closeBtn)
+  // const closeBtn = document.createElement("button");
+  // closeBtn.innerHTML = "×";
+  // closeBtn.className = "dialog-close";
+  // dialog.appendChild(closeBtn)
 
   const image = document.createElement("img");
   image.src = args.dialogImage || "";
   const isMobile = window.matchMedia("(max-width: 768px)").matches;
-  image.style.maxWidth = isMobile ? "80vw" : "45vw"; 
+  image.style.maxWidth = isMobile ? "75vw" : "45vw"; 
   image.style.width = "auto";
   image.style.height = "auto";
   image.style.marginBottom = "10px";
