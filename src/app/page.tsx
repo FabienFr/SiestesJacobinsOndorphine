@@ -183,7 +183,7 @@ export default function HomePage() {
 
     pannellum.viewer(panoRef.current, {
       type: "equirectangular",
-      panorama: "/images/jacobins.jpg",
+      panorama: "/images/jacobins2.jpg",
       autoLoad: true,
       compass: true,
       hotSpots: HOTSPOTS,

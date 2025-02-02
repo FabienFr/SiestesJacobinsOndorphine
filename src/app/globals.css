@@ -28,8 +28,8 @@ html, body {
 
 @keyframes ping {
   75%, 100% {
-    transform: scale(2);
-    opacity: 0.05;
+    transform: scale(1.8);
+    opacity: 0.15;
   }
 }
 
