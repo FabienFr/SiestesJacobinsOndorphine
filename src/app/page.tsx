@@ -77,9 +77,9 @@ function hotspotWithImage(hotSpotDiv: HTMLDivElement, args: HotspotArgs) {
   dialog.appendChild(content);
   document.body.appendChild(dialog);
 
-  closeBtn.onclick = () => {
-    dialog.style.display = "none";
-  };
+  // closeBtn.onclick = () => {
+  //   dialog.style.display = "none";
+  // };
 
   document.addEventListener("click", (event) => {
     if (!dialog.contains(event.target as Node) && 
