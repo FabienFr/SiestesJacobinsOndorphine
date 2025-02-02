@@ -19,6 +19,7 @@ interface PannellumConfig {
 
 interface HotspotArgs {
   src: string;
+  message: string;
 }
 
 interface Pannellum {
@@ -65,7 +66,8 @@ export default function HomePage() {
           // We don't use 'type': 'info' or 'scene'; instead, define our own custom tooltip
           createTooltipFunc: hotspotWithImage,
           createTooltipArgs: {
-            src: "/images/siestes.png", // The image you want to display
+            src: "/images/siestes.png",
+            message: 'Hello from a custom tooltip!'// The image you want to display
           },
         },
       ],
