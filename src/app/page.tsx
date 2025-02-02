@@ -97,6 +97,18 @@ function hotspotWithImage(hotSpotDiv: HTMLDivElement, args: HotspotArgs) {
 
 const HOTSPOTS: PannellumHotspot[] = [
   {
+    pitch: 17,
+    yaw: -32.5,
+    createTooltipFunc: hotspotWithImage,
+    createTooltipArgs: {
+      src: "/images/siestes.png",
+      message: "Les siestes",
+      dialogImage: "/images/festival.jpg",
+      url: "https://les-siestes.com/association",
+      size: 50
+    },
+  },
+  {
     pitch: 16,
     yaw: 0,
     createTooltipFunc: hotspotWithImage,
@@ -121,14 +133,38 @@ const HOTSPOTS: PannellumHotspot[] = [
     },
   },
   {
-    pitch: 175,
-    yaw: -10,
+    pitch: 2,
+    yaw: 51.6,
+    createTooltipFunc: hotspotWithImage,
+    createTooltipArgs: {
+      src: "/images/siestes.png",
+      message: "Couvent des Jacobins",
+      dialogImage: "/images/cloitre.jpg",
+      url: "https://jacobins.toulouse.fr/fr/",
+      size: 40
+    },
+  },
+  {
+    pitch: 176,
+    yaw: -19  ,
     createTooltipFunc: hotspotWithImage,
     createTooltipArgs: {
       src: "/images/siestes.png",
       message: "Ondorphine",
       dialogImage: "/images/nef.jpg",
       url: "https://ondorphine.club1.fr/",
+      size: 20
+    },
+  },
+  {
+    pitch: 177,
+    yaw: -3  ,
+    createTooltipFunc: hotspotWithImage,
+    createTooltipArgs: {
+      src: "/images/siestes.png",
+      message: "_Moltisanti_",
+      dialogImage: "/images/molti.jpg",
+      url: "https://pierrehumbert.fr/",
       size: 20
     },
   },
@@ -155,7 +191,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <main style={{ width: "100vw", height: "100vh", backgroundColor: "black" }}>
+    <main style={{ width: "100vw", height: "100vh", backgroundColor: "white" }}>
       <div ref={panoRef} className="w-full h-full">
         <Image src="/images/jacobins.jpg" alt="Jacobins" layout="fill" objectFit="cover" />
       </div>
