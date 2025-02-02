@@ -51,7 +51,7 @@ function hotspotWithImage(hotSpotDiv: HTMLDivElement, args: HotspotArgs) {
   const image = document.createElement("img");
   image.src = args.dialogImage || "";
   const isMobile = window.matchMedia("(max-width: 768px)").matches;
-  image.style.maxWidth = isMobile ? "70vw" : "50vw"; 
+  image.style.maxWidth = isMobile ? "70vw" : "40vw"; 
   image.style.width = "auto";
   image.style.height = "auto";
   image.style.marginBottom = "10px";
