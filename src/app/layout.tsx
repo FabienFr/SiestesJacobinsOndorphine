@@ -1,10 +1,23 @@
 import './globals.css';
+import { ReactNode } from 'react';
 
 export const metadata = {
-  title: "Siestes aux Jacobins - Ondorphine",
+  title: "Les Siestes - Nuit aux Jacobins - Ondorphine",
+  description: "Une expérience sonore immersive dans la nef",
+  openGraph: {
+    title: "Les Siestes - Nuit aux Jacobins - Ondorphine",
+    description: "Une expérience sonore immersive dans la nef",
+    images: [
+      {
+        url: '/images/affiche.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Les Siestes aux Jacobins',
+      },
+    ],
+  },
 };
 
-import { ReactNode } from 'react';
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
