@@ -25,15 +25,22 @@ export default function Logo() {
 
   return (
     <StyledDiv>
-      <Image 
-        src="/images/logo2.png" 
-        alt="Logo"
-        width={250}
-        height={250}
-        className="w-[120px] h-[120px] md:w-[250px] md:h-[250px]"
-        priority
-        onError={() => setHasError(true)}
-      />
+      <a 
+        href="https://les-siestes.com" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        style={{ display: 'block' }}
+      >
+        <Image 
+          src="/images/logo2.png" 
+          alt="Logo"
+          width={250}
+          height={250}
+          className="w-[120px] h-[120px] md:w-[250px] md:h-[250px]"
+          priority
+          onError={() => setHasError(true)}
+        />
+      </a>
     </StyledDiv>
   );
 }
