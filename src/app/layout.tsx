@@ -1,6 +1,8 @@
 import './globals.css';
 import { ReactNode } from 'react';
 import { Analytics } from "@vercel/analytics/next"
+import Logo from './components/logo';
+
 
 export const metadata = {
   title: "Les Siestes - Nuit aux Jacobins - Ondorphine",
@@ -33,9 +35,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           defer
         />
       </head>
-      <body style={{ height: "100%", margin: 0 }}>
-        {children}
-        <Analytics />
+      <body className="w-full h-full m-0 overflow-hidden">
+        <main className='relative w-full h-full'>
+          {children}
+          <Logo />
+          <Analytics />
+        </main>
       </body>
     </html>
   );

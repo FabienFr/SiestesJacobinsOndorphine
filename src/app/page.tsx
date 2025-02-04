@@ -191,10 +191,10 @@ export default function HomePage() {
   }, []);
 
   return (
-    <main style={{ width: "100vw", height: "100vh", backgroundColor: "white" }}>
+    <div style={{ width: "100vw", height: "100vh", backgroundColor: "white" }}>
       <div ref={panoRef} className="w-full h-full">
         <Image src="/images/jacobins.jpg" alt="Jacobins" layout="fill" objectFit="cover" />
       </div>
-    </main>
+    </div>
   );
 }
