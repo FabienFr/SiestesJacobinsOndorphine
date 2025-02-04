@@ -38,7 +38,7 @@ a {
   75%,
   100% {
     transform: scale(1.8);
-    opacity: 0.3;
+    opacity: 0.5;
   }
 }
 
@@ -46,7 +46,7 @@ a {
   width: 32px !important;
   height: 32px !important;
   transform-origin: center center;
-  animation: ping 1.9s cubic-bezier(0, 0, 0.2, 1) infinite !important;
+  animation: ping 1.7s cubic-bezier(0, 0, 0.2, 1) infinite !important;
 }
 
 .custom-dialog {
