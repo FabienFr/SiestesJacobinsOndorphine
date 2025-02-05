@@ -20,12 +20,6 @@ importers:
       pannellum:
         specifier: ^2.5.6
         version: 2.5.6
-      panolens:
-        specifier: ^0.12.1
-        version: 0.12.1
-      photo-sphere-viewer:
-        specifier: ^4.8.1
-        version: 4.8.1
       react:
         specifier: ^19.0.0
         version: 19.0.0
@@ -1464,9 +1458,6 @@ packages:
   pannellum@2.5.6:
     resolution: {integrity: sha512-R4kSPpj36wQPlyIi9ZftxPfVYF11DEbNBATUEI+pkMGZDFYBV5Jxi6tYFVDdmxA2xaTeKZQHMIuIIj7njVSTQQ==}
 
-  panolens@0.12.1:
-    resolution: {integrity: sha512-2hpjm+rRnDdaLD5Bak49K0Y9/X6vOr1OcyJx5piSA6sCOs1tsgchMgKIwpSGCMpBMHWZ10E/Cz4BIwyXYebt5g==}
-
   parent-module@1.0.1:
     resolution: {integrity: sha512-GQ2EWRpQV8/o+Aw8YqtfZZPfNRWZYkbidE9k5rpl/hC3vtHHBfGm2Ifi6qWV+coDGkrUKZAxE3Lot5kcsRlh+g==}
     engines: {node: '>=6'}
@@ -1493,10 +1484,6 @@ packages:
   path-type@4.0.0:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
     engines: {node: '>=8'}
-
-  photo-sphere-viewer@4.8.1:
-    resolution: {integrity: sha512-Yl1KZq1adtrajCOrf8Y79Qi4A35DfEu8atL779YOdA9XHoH2l2+sYovejnZlGgUM0hEbTyenRDoyXSy/MtioYg==}
-    deprecated: Use @photo-sphere-viewer/core instead, see https://photo-sphere-viewer.js.org/guide/migration.html
 
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
@@ -1807,12 +1794,6 @@ packages:
   thenify@3.3.1:
     resolution: {integrity: sha512-RVZSIV5IG10Hk3enotrhvz0T9em6cyHBLkH/YAZuKqd8hRkKhSfCGIcP2KUY0EPxndzANBmNllzWPwak+bheSw==}
 
-  three@0.105.2:
-    resolution: {integrity: sha512-L3Al37k4g3hVbgFFS251UVtIc25chhyN0/RvXzR0C+uIBToV6EKDG+MZzEXm9L2miGUVMK27W46/VkP6WUZXMg==}
-
-  three@0.147.0:
-    resolution: {integrity: sha512-LPTOslYQXFkmvceQjFTNnVVli2LaVF6C99Pv34fJypp8NbQLbTlu3KinZ0zURghS5zEehK+VQyvWuPZ/Sm8fzw==}
-
   to-regex-range@5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
     engines: {node: '>=8.0'}
@@ -1856,9 +1837,6 @@ packages:
     resolution: {integrity: sha512-84MVSjMEHP+FQRPy3pX9sTVV/INIex71s9TL2Gm5FG/WG1SqXeKyZ0k7/blY/4FdOzI12CBy1vGc4og/eus0fw==}
     engines: {node: '>=14.17'}
     hasBin: true
-
-  uevent@2.2.0:
-    resolution: {integrity: sha512-48s5LF/c6R1fUmctGib/dWKhZjZLd4aK/85dwVAbwgHNBSO0k0UNp0ZKZpkSbU6633qYhgykYQPakTSuOxZopA==}
 
   unbox-primitive@1.1.0:
     resolution: {integrity: sha512-nWJ91DjeOkej/TA8pXQ3myruKpKEYgqvpw9lz4OPHj/NWFNluYrjbz9j01CJ8yKQd2g4jFoOkINCTW2I5LEEyw==}
@@ -3512,10 +3490,6 @@ snapshots:
 
   pannellum@2.5.6: {}
 
-  panolens@0.12.1:
-    dependencies:
-      three: 0.105.2
-
   parent-module@1.0.1:
     dependencies:
       callsites: 3.1.0
@@ -3539,11 +3513,6 @@ snapshots:
       minipass: 7.1.2
 
   path-type@4.0.0: {}
-
-  photo-sphere-viewer@4.8.1:
-    dependencies:
-      three: 0.147.0
-      uevent: 2.2.0
 
   picocolors@1.1.1: {}
 
@@ -3928,10 +3897,6 @@ snapshots:
     dependencies:
       any-promise: 1.3.0
 
-  three@0.105.2: {}
-
-  three@0.147.0: {}
-
   to-regex-range@5.0.1:
     dependencies:
       is-number: 7.0.0
@@ -3989,8 +3954,6 @@ snapshots:
       reflect.getprototypeof: 1.0.10
 
   typescript@5.7.3: {}
-
-  uevent@2.2.0: {}
 
   unbox-primitive@1.1.0:
     dependencies:

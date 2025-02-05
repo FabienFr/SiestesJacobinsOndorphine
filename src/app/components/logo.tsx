@@ -17,7 +17,7 @@ export default function Logo() {
       transform: none;
     }
     @media (max-width: 767px) {
-      bottom: 2rem;
+      bottom: 1.5rem;
       left: 50%;
       transform: translateX(-50%);
     }
@@ -36,7 +36,7 @@ export default function Logo() {
           alt="Logo"
           width={250}
           height={250}
-          className="w-[120px] h-[120px] md:w-[250px] md:h-[250px]"
+          className="!w-[100px] !h-[100px] md:w-[250px] md:h-[250px]"
           priority
           onError={() => setHasError(true)}
         />
